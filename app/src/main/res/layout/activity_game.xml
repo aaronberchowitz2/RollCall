@@ -7,6 +7,19 @@
     tools:context=".GameActivity">
 
     <Button
+        android:id="@+id/chatbtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="125dp"
+        android:text="Fun Photos for Players"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rulesbtn" />
+
+    <Button
         android:id="@+id/rollbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,18 +29,21 @@
         android:text=" Let's Roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.801"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
 
     <Button
         android:id="@+id/rulesbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="131dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="145dp"
         android:text="  Rules       "
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.809"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollbtn" />
 
@@ -40,6 +56,7 @@
         android:layout_marginEnd="145dp"
         android:text="Chat with Others"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rulesbtn" />
 
@@ -53,7 +70,9 @@
         android:layout_marginBottom="315dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rollcall" />
 </androidx.constraintlayout.widget.ConstraintLayout>
