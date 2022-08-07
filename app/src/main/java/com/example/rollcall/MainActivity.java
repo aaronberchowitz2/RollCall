@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             Intent i = new Intent(MainActivity.this, GameActivity.class);
-            i.putExtra("user",account);
             startActivity(i);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

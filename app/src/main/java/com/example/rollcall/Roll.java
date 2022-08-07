@@ -17,7 +17,6 @@ import java.util.Random;
 
 public class Roll extends AppCompatActivity {
     ImageView player, cpu;
-    Button rolling;
 
     TextView p_score, cpu_score;
     int cpupoints = 0, player_points = 0;
@@ -29,7 +28,7 @@ public class Roll extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roll);
-        rolling = findViewById(R.id.rollbtn);
+
 
         cpu = (ImageView) findViewById(R.id.cpu);
         player = (ImageView) findViewById(R.id.player);
@@ -39,27 +38,25 @@ public class Roll extends AppCompatActivity {
 
         r = new Random();
 
-
+        Button rolling = (Button) findViewById(R.id.rollbtn);
         rolling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (cpupoints<10){
+                if (cpupoints < 10) {
 
 
-
-
-                    int cpuThrow = r.nextInt(6)+1;
-                    int playerThrow = r.nextInt(6)+1;
+                    int cpuThrow = r.nextInt(6) + 1;
+                    int playerThrow = r.nextInt(6) + 1;
 
                     setImageCPU(cpuThrow);
                     setImagePlayer(playerThrow);
 
-                    if (cpuThrow > playerThrow ){
+                    if (cpuThrow > playerThrow) {
                         cpupoints++;
                     }
 
-                    if (playerThrow > cpuThrow ){
+                    if (playerThrow > cpuThrow) {
                         player_points++;
                     }
 
@@ -68,15 +65,17 @@ public class Roll extends AppCompatActivity {
                 }
 
 
-                if (player_points>=10){
-                    p_score.setText("Player won" );
-                    cpu_score.setText("CPU lost");
+               else {
+                    if (cpupoints==10 && player_points >= 10) {
+                        p_score.setText("Player won");
+                        cpu_score.setText("CPU lost");
+                    } else {
+                        p_score.setText("Player lost");
+                        cpu_score.setText("CPU won");
+                    }
+
                 }
-                else{
-                    p_score.setText("Player lost" );
-                    cpu_score.setText("CPU won");
-                }
-                }
+            }
 
 
         });
@@ -86,9 +85,10 @@ public class Roll extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), addLeader.class);
-                i.putExtra("points",player_points);
+                Intent i = new Intent(view.getContext(), LeaderboardActivity.class);
+                i.putExtra("points", String.valueOf(player_points));
                 i.putExtra("account", MainActivity.signedacc());
+
 
                 startActivity(i);
 

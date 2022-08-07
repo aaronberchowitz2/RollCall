@@ -2,6 +2,7 @@ package com.example.rollcall;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,17 @@ import java.util.List;
 
 class LeadersAdapter  extends RecyclerView.Adapter<LeadersViewHolder> {
         private List<Leaders> Leaders;
-
-        public LeadersAdapter (List<Leaders> leaders) {
-                this.Leaders = leaders;
+        public LeadersAdapter(List<Leaders> Leaders)
+        {
+                this.Leaders = Leaders;
         }
+
+        public void AddContact(Leaders leaders)
+        {
+                Leaders.add(leaders);
+                notifyDataSetChanged();
+        }
+
 
         @NonNull
         @Override
@@ -29,11 +37,11 @@ class LeadersAdapter  extends RecyclerView.Adapter<LeadersViewHolder> {
 
         @Override
         public void onBindViewHolder(@NonNull LeadersViewHolder holder, int position) {
-                Leaders leaders = Leaders.get(position);
+                Leaders leader = Leaders.get(position);
 
-                holder.avatar.setImageResource(leaders.getImage());
-                holder.name.setText(leaders.getName());
-                holder.points.setText(leaders.getPoints());
+                holder.avatar.setImageResource(leader.getImage());
+                holder.name.setText(leader.getName());
+                holder.points.setText(leader.getPoints());
 
         }
                 public int getItemCount () {

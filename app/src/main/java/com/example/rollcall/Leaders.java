@@ -2,7 +2,7 @@ package com.example.rollcall;
 
 import java.io.Serializable;
 
-class Leaders implements Serializable {
+class Leaders implements Serializable{
     private int Image;
     private String Name;
     private String Points;

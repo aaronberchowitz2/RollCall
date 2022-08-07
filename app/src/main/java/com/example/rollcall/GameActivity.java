@@ -16,6 +16,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+
         Button btn = findViewById(R.id.rollbtn);
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -38,15 +39,15 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        GoogleSignInAccount acc = MainActivity.signedacc();
         Button btn2 = findViewById(R.id.chatbtn);
         btn2.setOnClickListener(new View.OnClickListener() {
 
-            GoogleSignInAccount acc = MainActivity.signedacc();
+
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), ChatActivity.class);
-                i.putExtra("user",acc);
+                i.putExtra("acc",acc);
                 startActivity(i);
 
             }

@@ -3,6 +3,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,8 +21,7 @@ public class addLeader extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_leader);
         Bundle b = getIntent().getExtras();
-        Leaders points = (Leaders) b.getSerializable("points");
-        GoogleSignInAccount account = (GoogleSignInAccount) b.get("user");
+        String points = (String) b.get("points");
 
 
 
@@ -31,10 +31,10 @@ public class addLeader extends AppCompatActivity {
             public void onClick(View v) {
                 EditText name = findViewById(R.id.name);
 
-                Leaders user = new Leaders(R.drawable.elon,name.getText().toString(),points.toString());
+                Leaders leader = new Leaders(R.drawable.elon,name.getText().toString(),String.valueOf(points));
 
                 Intent i = new Intent();
-                i.putExtra("user",user);
+                i.putExtra("leader", leader);
                 setResult(1,i);
                 finish();
 

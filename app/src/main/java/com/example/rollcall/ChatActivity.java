@@ -39,7 +39,7 @@ public class ChatActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            account = (GoogleSignInAccount)extras.get("user");
+            account = (GoogleSignInAccount)extras.get("acc");
         }
 
         TextView welcome = findViewById(R.id.welcomeTV);
