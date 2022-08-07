@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "729735795053",
+    "project_id": "rollcall-8ee3c",
+    "storage_bucket": "rollcall-8ee3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729735795053:android:6c1564854271c13c88ca64",
+        "android_client_info": {
+          "package_name": "com.example.rollcall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729735795053-q8fnuai3nf63tc9opof7fcdic6id2ern.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rollcall",
+            "certificate_hash": "e6d15ae64d7ff49e828ec1ea1bf5a700ced82483"
+          }
+        },
+        {
+          "client_id": "729735795053-o97omj0s872j0731l4k54nbamd01v3ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACDF21BvqCvtB5cQRfvsXAM2hU-ZolyCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729735795053-o97omj0s872j0731l4k54nbamd01v3ts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
