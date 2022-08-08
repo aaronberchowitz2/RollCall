@@ -64,14 +64,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static GoogleSignInAccount signedacc(){
-        return account;
-    }
+
 
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
             Intent i = new Intent(MainActivity.this, GameActivity.class);
@@ -80,5 +78,8 @@ public class MainActivity extends AppCompatActivity {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
         }
+    }
+    public static GoogleSignInAccount signedacc(){
+        return account;
     }
 }
