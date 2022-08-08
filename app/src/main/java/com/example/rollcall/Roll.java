@@ -19,7 +19,8 @@ public class Roll extends AppCompatActivity {
     ImageView player, cpu;
 
     TextView p_score, cpu_score;
-    int cpupoints = 0, player_points = 0;
+    int cpupoints = 0;
+    private static int player_points;
     Random r;
 
 
@@ -86,7 +87,6 @@ public class Roll extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), LeaderboardActivity.class);
-                i.putExtra("points", String.valueOf(player_points));
                 i.putExtra("account", MainActivity.signedacc());
 
 
@@ -95,6 +95,9 @@ public class Roll extends AppCompatActivity {
             }
         });
 
+    }
+    public static String points (){
+        return String.valueOf(player_points);
     }
 
     public void setImageCPU(int num){

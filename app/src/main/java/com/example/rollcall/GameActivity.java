@@ -52,6 +52,19 @@ public class GameActivity extends AppCompatActivity {
 
             }
         });
+
+        Button btn3 = findViewById(R.id.photobtn);
+        btn3.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(), PictureActivity.class);
+                i.putExtra("acc",acc);
+                startActivity(i);
+
+            }
+        });
     }
 
 }

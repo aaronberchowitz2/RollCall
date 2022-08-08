@@ -15,13 +15,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import java.net.URI;
 
 public class addLeader extends AppCompatActivity {
+    GoogleSignInAccount account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_leader);
-        Bundle b = getIntent().getExtras();
-        String points = (String) b.get("points");
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            account = (GoogleSignInAccount)extras.get("acc");
+        }
+
 
 
 
@@ -31,7 +35,7 @@ public class addLeader extends AppCompatActivity {
             public void onClick(View v) {
                 EditText name = findViewById(R.id.name);
 
-                Leaders leader = new Leaders(R.drawable.elon,name.getText().toString(),String.valueOf(points));
+                Leaders leader = new Leaders(R.drawable.elon,name.getText().toString(),Roll.points());
 
                 Intent i = new Intent();
                 i.putExtra("leader", leader);
